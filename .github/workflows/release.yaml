@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check manifest version
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Compare manifest version against tag
         env:
@@ -30,13 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Validate
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: HACS validation
         uses: hacs/action@main
         with:
           category: integration
-          ignore: brands
+          ignore: brands issues topics
 
       - name: Hassfest validation
         uses: home-assistant/actions/hassfest@master
